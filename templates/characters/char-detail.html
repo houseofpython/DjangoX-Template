@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <h1> Here is your Snack Request</h1>
+    <p>Character: {{ Character.name }}</p>
+    <p>Description: {{ Character.description}}</p>
+    <p>House: {{ Character.purchaser }}</p>
+    <p></p>
+<!--    <button><a href="{% url 'detail-view' snack.pk %}">Return to Snack List</a></button>-->
+<!--    <button><a href="{% url 'update-view' snack.pk %}"> Update Snack</a></button>-->
+
+<!--    <button><a href="{% url 'delete-view' snack.pk %}"> Delete Snack</a></button>-->
+{% endblock content %}
+
