@@ -1,112 +1,29 @@
-> A batteries-included Django starter project. To learn more try the books [Django for Beginners](https://djangoforbeginners.com), [Django for APIs](https://djangoforapis.com), and [Django for Professionals](https://djangoforprofessionals.com).
+# DjangoX
 
-## 🚀 Features
 
-- Django 4.2 & Python 3.11
-- Install via [Pip](https://pypi.org/project/pip/) or [Docker](https://www.docker.com/)
-- User log in/out, sign up, password reset via [django-allauth](https://github.com/pennersr/django-allauth)
-- Static files configured with [Whitenoise](http://whitenoise.evans.io/en/stable/index.html)
-- Styling with [Bootstrap v5](https://getbootstrap.com/)
-- Debugging with [django-debug-toolbar](https://github.com/jazzband/django-debug-toolbar)
-- DRY forms with [django-crispy-forms](https://github.com/django-crispy-forms/django-crispy-forms)
+Create a website using DjangoX as a template.
+Click the Use this template button on home page of DjangoX repository.
+Name your repo whatever you like.
+Create a Django app of your choosing.
+The specific functionality of the site is up to you but should have a model that makes use of get_user_model
+Delete these configuration files not needed for your project.
+Pipfile
+Pipfile.lock
+Dockerfile
+docker-compose.yml
 
-![Homepage](homepage_42.png)
-----
 
-## Table of Contents
-* **[Installation](#installation)**
-  * [Pip](#pip)
-  * [Docker](#docker)
-* [Next Steps](#next-steps)
-* [Contributing](#contributing)
-* [Support](#support)
-* [License](#license)
+# Time 
 
-----
+This took me 5 hours, expected it to take me 2 hours 
 
-## 📖 Installation
-DjangoX can be installed via Pip or Docker. To start, clone the repo to your local computer and change into the proper directory.
+Still working on test and models for characters. 
 
-```
-$ git clone https://github.com/wsvincent/djangox.git
-$ cd djangox
-```
+# Functionality 
 
-### Pip
+-[Code](https://github.com/houseofpython/DjangoX-Template/tree/b2a5a33d37338d1960a5ac593eadb1e0a55e34d9/characters)
 
-```
-$ python -m venv .venv
-
-# Windows
-$ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-$ .venv\Scripts\Activate.ps1
-
-# macOS
-$ source .venv/bin/activate
-
-(.venv) $ pip install -r requirements.txt
-(.venv) $ python manage.py migrate
-(.venv) $ python manage.py createsuperuser
-(.venv) $ python manage.py runserver
-# Load the site at http://127.0.0.1:8000
-```
-
-### Docker
-
-To use Docker with PostgreSQL as the database update the `DATABASES` section of `django_project/settings.py` to reflect the following:
-
-```python
-# django_project/settings.py
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "db",  # set in docker-compose.yml
-        "PORT": 5432,  # default postgres port
-    }
-}
-```
-
-The `INTERNAL_IPS` configuration in `django_project/settings.py` must be also be updated:
-
-```python
-# config/settings.py
-# django-debug-toolbar
-import socket
-hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
-```
-
-And then proceed to build the Docker image, run the container, and execute the standard commands within Docker.
-
-```
-$ docker-compose up -d --build
-$ docker-compose exec web python manage.py migrate
-$ docker-compose exec web python manage.py createsuperuser
-# Load the site at http://127.0.0.1:8000
-```
-
-## Next Steps
-
-- Add environment variables. There are multiple packages but I personally prefer [environs](https://pypi.org/project/environs/).
-- Add [gunicorn](https://pypi.org/project/gunicorn/) as the production web server.
-- Update the [EMAIL_BACKEND](https://docs.djangoproject.com/en/4.0/topics/email/#module-django.core.mail) and connect with a mail provider.
-- Make the [admin more secure](https://opensource.com/article/18/1/10-tips-making-django-admin-more-secure).
-- `django-allauth` supports [social authentication](https://django-allauth.readthedocs.io/en/latest/providers.html) if you need that.
-
-I cover all of these steps in my three books: [Django for Beginners](https://djangoforbeginners.com), [Django for APIs](https://djangoforapis.com), and [Django for Professionals](https://djangoforprofessionals.com).
-
-----
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome! See [CONTRIBUTING.md](https://github.com/wsvincent/djangox/blob/master/CONTRIBUTING.md).
-
-## ⭐️ Support
-
-Give a ⭐️  if this project helped you!
+This app is a full stack application that takes in user input for snacks and stories the object. This app has full functionality using CRUD and Forms 
 
 ## License
 
